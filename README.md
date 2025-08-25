@@ -29,8 +29,7 @@ Ce projet propose une macro en VBA permettant de générer un fichier XML au for
 
 ## 🚀 Installation
 
-1. Télécharger ![GitHub Downloads (all assets, latest release)](https://img.shields.io/github/downloads/Mttwt9/XRR-SCORE/latest/total?style=flat-square&label=LastRelease&color=magenta)
- ou cloner ce dépôt.
+1. Télécharger [![GitHub Release](https://img.shields.io/github/v/release/Mttwt9/XRR-SCORE?style=flat-square&label=lastRelease&color=magenta)](https://github.com/Mttwt9/XRR-SCORE/releases/latest) ou cloner ce dépôt.
 2. Ouvrir le fichier `Template_Source_TC.xlsx` et entrer les inscrits selon les colonnes prévues.
 3. Ouvrir l'éditeur VBA (Alt+F11) dans Excel.
 4. Importer le module `SailingXML_TC.bas` dans le projet VBA (menu Fichier > Importer un fichier...).
