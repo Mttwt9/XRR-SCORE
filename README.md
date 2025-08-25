@@ -8,4 +8,4 @@ Pour utiliser la macro, il convient de vérifier les contantes et modifier event
 
 
 
-![GitHub License](https://img.shields.io/github/license/Mttwt9/XRR-SCORE?style=flat-square&color=blue)
+[![GitHub License](https://img.shields.io/github/license/Mttwt9/XRR-SCORE?style=flat-square&color=blue)](https://github.com/Mttwt9/XRR-SCORE/blob/main/LICENSE)
