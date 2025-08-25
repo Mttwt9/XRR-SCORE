@@ -24,16 +24,16 @@ Ce projet propose une macro en VBA permettant de générer un fichier XML au for
 - `LICENSE` : licence GNU GPL v3
 
 > [!Note]
-> Les fichiers suffixé de TC sont prévus pour des imports en temps compensé. 
-[À venir] Les fichiers avec le suffixe TR sont des dérivés des TC sans les attributs uniquement nécessaires au TC. 
+> Les fichiers suffixés par TC sont prévus pour des imports en temps compensé.
+[À venir] Les fichiers avec le suffixe TR sont des dérivés des TC sans les attributs uniquement nécessaires au TC.
 
 ## 🚀 Installation
 
 1. Télécharger ![GitHub Downloads (all assets, latest release)](https://img.shields.io/github/downloads/Mttwt9/XRR-SCORE/latest/total?style=flat-square&label=LastRelease&color=magenta)
  ou cloner ce dépôt.
-2. Ouvrir le fichier `Template_Source.xlsx` et entrer les inscrits selon les colonnes prévues.
+2. Ouvrir le fichier `Template_Source_TC.xlsx` et entrer les inscrits selon les colonnes prévues.
 3. Ouvrir l'éditeur VBA (Alt+F11) dans Excel.
-4. Importer le module `SailingXML.bas` dans le projet VBA (menu Fichier > Importer un fichier...).
+4. Importer le module `SailingXML_TC.bas` dans le projet VBA (menu Fichier > Importer un fichier...).
 
 ## 📝 Utilisation
 > [!IMPORTANT]
@@ -47,9 +47,9 @@ Ce projet propose une macro en VBA permettant de générer un fichier XML au for
 ## ⚙️ Personnalisation
 
 - Les constantes `COL_xxx` définissent les index des colonnes. Si le fichier source diffère du modèle, il convient de modifier leurs valeurs.
-- Si une colonne n'existe pas, indiquez l'index d'une colonne vide ou adaptez le code : 
-> - Commenter les lignes de définition des constante (`Dim COL_xxx`, ) 
-> - Corriger la création des attributs afférants aux constantes commentés en remplacant `ws.Cells(i, COL_xxx).Value` par `""`.
+- Si une colonne n'existe pas, indiquer l'index d'une colonne vide ou adapter le code :
+> - Commenter les lignes de définition des constantes (`Dim COL_xxx`)
+> - Corriger la création des attributs afférents aux constantes commentées en remplaçant `ws.Cells(i, COL_xxx).Value` par `""`.
 
 ## 📂 Exemple de résultat
 
