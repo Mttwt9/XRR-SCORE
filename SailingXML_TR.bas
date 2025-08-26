@@ -27,37 +27,35 @@ Sub CreateSailingXML()
     Dim tempBoats As Object ' Collection temporaire des Boats
 
     ' Définition des constantes pour référencer les champs avec les numéros des colonnes
-    Dim COL_NOM_BARREUR As Integer: COL_NOM_BARREUR = 10
-    Dim COL_PRENOM_BARREUR As Integer: COL_PRENOM_BARREUR = 11
+    Dim COL_NOM_BARREUR As Integer: COL_NOM_BARREUR = 8
+    Dim COL_PRENOM_BARREUR As Integer: COL_PRENOM_BARREUR = 9
     ' Dim COL_NOC_BARREUR As String : COL_NOC_BARREUR = "FRA"
-    Dim COL_NOC_BARREUR As Integer: COL_NOC_BARREUR = 13
-    Dim COL_GENRE_BARREUR As Integer: COL_GENRE_BARREUR = 12
-    Dim COL_DATE_NAISSANCE_BARREUR As Integer: COL_DATE_NAISSANCE_BARREUR = 15
-    Dim COL_NUM_LICENCE_BARREUR As Integer: COL_NUM_LICENCE_BARREUR = 9
-    Dim COL_WS_ID_BARREUR As Integer: COL_WS_ID_BARREUR = 17
-    Dim COL_CLASS_ID_BARREUR As Integer: COL_CLASS_ID_BARREUR = 16
-    Dim COL_CLUB_BARREUR As Integer: COL_CLUB_BARREUR = 14
+    Dim COL_NOC_BARREUR As Integer: COL_NOC_BARREUR = 11
+    Dim COL_GENRE_BARREUR As Integer: COL_GENRE_BARREUR = 10
+    Dim COL_DATE_NAISSANCE_BARREUR As Integer: COL_DATE_NAISSANCE_BARREUR = 13
+    Dim COL_NUM_LICENCE_BARREUR As Integer: COL_NUM_LICENCE_BARREUR = 7
+    Dim COL_WS_ID_BARREUR As Integer: COL_WS_ID_BARREUR = 15
+    Dim COL_CLASS_ID_BARREUR As Integer: COL_CLASS_ID_BARREUR = 14
+    Dim COL_CLUB_BARREUR As Integer: COL_CLUB_BARREUR = 12
 
-    Dim COL_NOM_EQUIP As Integer: COL_NOM_EQUIP = 19
-    Dim COL_PRENOM_EQUIP As Integer: COL_PRENOM_EQUIP = 20
+    Dim COL_NOM_EQUIP As Integer: COL_NOM_EQUIP = 17
+    Dim COL_PRENOM_EQUIP As Integer: COL_PRENOM_EQUIP = 18
     ' Dim COL_NOC_EQUIP As String : COL_NOC_EQUIP = "FRA"
-    Dim COL_NOC_EQUIP As Integer: COL_NOC_EQUIP = 22
-    Dim COL_GENRE_EQUIP As Integer: COL_GENRE_EQUIP = 21
-    Dim COL_DATE_NAISSANCE_EQUIP As Integer: COL_DATE_NAISSANCE_EQUIP = 24
-    Dim COL_NUM_LICENCE_EQUIP As Integer: COL_NUM_LICENCE_EQUIP = 18
-    Dim COL_WS_ID_EQUIP As Integer: COL_WS_ID_EQUIP = 26
-    Dim COL_CLASS_ID_EQUIP As Integer: COL_CLASS_ID_EQUIP = 25
-    Dim COL_CLUB_EQUIP As Integer: COL_CLUB_EQUIP = 23
+    Dim COL_NOC_EQUIP As Integer: COL_NOC_EQUIP = 20
+    Dim COL_GENRE_EQUIP As Integer: COL_GENRE_EQUIP = 19
+    Dim COL_DATE_NAISSANCE_EQUIP As Integer: COL_DATE_NAISSANCE_EQUIP = 22
+    Dim COL_NUM_LICENCE_EQUIP As Integer: COL_NUM_LICENCE_EQUIP = 16
+    Dim COL_WS_ID_EQUIP As Integer: COL_WS_ID_EQUIP = 24
+    Dim COL_CLASS_ID_EQUIP As Integer: COL_CLASS_ID_EQUIP = 23
+    Dim COL_CLUB_EQUIP As Integer: COL_CLUB_EQUIP = 21
 
     Dim COL_NUM_VOILE As Integer: COL_NUM_VOILE = 2
     Dim COL_NOM_VOILE As Integer: COL_NOM_VOILE = 4
-    Dim COL_MODELE_VOILE As Integer: COL_MODELE_VOILE = 6
     Dim COL_BOW_NUMBER As Integer: COL_BOW_NUMBER = 3
-    Dim COL_OSIRS_GUEST As Integer: COL_OSIRS_GUEST = 7
     ' Dim COL_NOC_TEAM As String : COL_NOC_TEAM = "FRA"
     Dim COL_NOC_TEAM As Integer: COL_NOC_TEAM = 1
-    Dim COL_CAT_TEAM As Integer: COL_CAT_TEAM = 8
-    Dim COL_HANDICAP As Integer: COL_HANDICAP = 5
+    Dim COL_CAT_TEAM As Integer: COL_CAT_TEAM = 6
+    Dim COL_RANKING As Integer: COL_RANKING = 5
     
    
 
@@ -128,12 +126,6 @@ Sub CreateSailingXML()
         boatNode.setAttribute "BoatName", ""
         boatNode.setAttribute "BowNumber", ""
         boatNode.setAttribute "BoatModel", ws.Cells(i, COL_MODELE_VOILE).Value
-        If ws.Cells(i, COL_HANDICAP).Value <> "" Then
-            boatNode.setAttribute "BoatHandicapType", ws.Cells(i, COL_HANDICAP).Value
-            If ws.Cells(i, COL_HANDICAP).Value = "OSIR" And ws.Cells(i, COL_OSIRS_GUEST).Value = 1 Then
-                boatNode.setAttribute "OsirisGuest", ws.Cells(i, COL_OSIRS_GUEST).Value
-            End If
-        End If
         tempBoats.Add boatID, boatNode
 
         ' Création de l'équipe et mise en tampon
@@ -142,6 +134,7 @@ Sub CreateSailingXML()
         teamNode.setAttribute "BoatID", boatID
         teamNode.setAttribute "NOC", ws.Cells(i, COL_NOC_TEAM).Value
         teamNode.setAttribute "Cat", ws.Cells(i, COL_CAT_TEAM).Value
+        teamNode.setAttribute "Ranking", ws.Cells(i, COL_RANKING).Value
 
         ' Ajout du skipper dans l'équipe
         Set crewNode = xmlDoc.createElement("Crew")
