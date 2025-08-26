@@ -18,19 +18,24 @@ Ce projet propose une macro en VBA permettant de générer un fichier XML au for
 
 ## 📦 Contenu du dépôt
 
-- `SailingXML_TC.bas` : module VBA contenant le code source
-- `Template_Source_TC.xlsx` : modèle Excel avec l'ordre des colonnes attendu
+- `SailingXML_TC.bas` : module VBA pour le temps compensé (TC)
+- `SailingXML_TR.bas` : module VBA pour le temps réel (TR)
+- `Template_Source_TC.xlsx` : modèle Excel TC (temps compensé)
+- `Template_Source_TR.xlsx` : modèle Excel TR (temps réel)
 - `README.md` : ce fichier
 - `LICENSE` : licence GNU GPL v3
 
 > [!Note]
-> Les fichiers suffixés par TC sont prévus pour des imports en temps compensé.
-[À venir] Les fichiers avec le suffixe TR sont des dérivés des TC sans les attributs uniquement nécessaires au TC.
+> - Les fichiers suffixés par TC sont prévus pour des imports en temps compensé (classements au temps compensé).
+> - Les fichiers suffixés par TR sont prévus pour des imports en temps réel (classements au temps réel).
+> *La différence entre les deux modules réside sur quelques attributs spécifique à l'un ou à l'autre (Ranking pour TR // OSIRS-Guest pour TC).*
 
 ## 🚀 Installation
 
 1. Télécharger [![GitHub Release](https://img.shields.io/github/v/release/Mttwt9/XRR-SCORE?style=flat-square&label=lastRelease&color=magenta)](https://github.com/Mttwt9/XRR-SCORE/releases/latest) ou cloner ce dépôt.
-2. Ouvrir le fichier `Template_Source_TC.xlsx` et entrer les inscrits selon les colonnes prévues.
+2. Ouvrir le fichier `Template_Source_TC.xlsx` ou `Template_Source_TR.xlsx` et entrer les inscrits selon les colonnes prévues.
+> [!TIP]
+> Les dates de naissance doivent être saisies dans un format DATE d'Excel : la macro convertira automatiquement ce format en `yyyy-mm-jj` dans le fichier XML généré (format attendu par SCORE).
 3. Ouvrir l'éditeur VBA (Alt+F11) dans Excel.
 4. Importer le module `SailingXML_TC.bas` dans le projet VBA (menu Fichier > Importer un fichier...).
 
