@@ -109,7 +109,7 @@ Sub CreateSailingXML()
             personNode.setAttribute "GivenName", ws.Cells(i, COL_PRENOM_EQUIP).Value
             personNode.setAttribute "NOC", ws.Cells(i, COL_NOC_EQUIP).Value
             personNode.setAttribute "Gender", ws.Cells(i, COL_GENRE_EQUIP).Value
-            personNode.setAttribute "BirthDate", ws.Cells(i, COL_DATE_NAISSANCE_EQUIP).Value
+            personNode.setAttribute "BirthDate", Format(ws.Cells(i, COL_DATE_NAISSANCE_EQUIP).Value, "yyyy-mm-dd")
             personNode.setAttribute "FFVLicenseNumber", ws.Cells(i, COL_NUM_LICENCE_EQUIP).Value
             personNode.setAttribute "ClubName", ws.Cells(i, COL_CLUB_EQUIP).Value
             personNode.setAttribute "IFPersonID", ws.Cells(i, COL_WS_ID_EQUIP).Value
