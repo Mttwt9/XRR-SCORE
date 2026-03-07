@@ -4,7 +4,7 @@ Attribute VB_Name = "SailingXML"
 ' Licence : GNU GPL v3 (voir fichier LICENSE)
 ' Détail : Génération d'un fichier XML (XRR) pour SCORE (FFVoile) à partir des données d'une feuille Excel.
 ' Encodage : Western European - Windows 1252 (CP1252)
-' Version : 2025-09-29 -- XRR v2.0
+' Version : 2025-09-29 -- XRR v2.1
 '''
 Sub CreateSailingXML()
     Dim xmlDoc As Object
@@ -115,7 +115,7 @@ Sub CreateSailingXML()
         rootNode.appendChild personNode
 
         ' Création de l'équipier s'il existe
-        If Trim(ws.Cells(i, COL_NOM_EQUIP).Value) <> "" And Trim(ws.Cells(i, COL_NUM_LICENCE_EQUIP).Value) <> "" Then
+        If Trim(ws.Cells(i, COL_NOM_EQUIP).Value) <> "" Or Trim(ws.Cells(i, COL_NUM_LICENCE_EQUIP).Value) <> "" Then
             Set personNode = xmlDoc.createElement("Person")
             personNode.setAttribute "PersonID", crewID
             personNode.setAttribute "FamilyName", Trim(ws.Cells(i, COL_NOM_EQUIP).Value)
